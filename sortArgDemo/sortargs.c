@@ -1,3 +1,4 @@
+#include "stdio.h"
 #include "bst.h"  
   
 BstNode *bstRoot = 0;
