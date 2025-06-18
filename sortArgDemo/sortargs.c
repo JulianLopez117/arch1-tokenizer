@@ -1,5 +1,7 @@
 #include "bst.h"  
   
+BstNode *bstRoot = 0;
+
 int main(int argc, char **argv)	/* prints arguments in order */
 {
   printf("the program name is <%s>\n", *(argv+0));
