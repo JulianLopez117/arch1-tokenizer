@@ -20,7 +20,8 @@ char *token_start(char *str){
   return 0;
 }
 char *token_terminator(char *token){
-  for(char *n = token; *n!='\0';n++){
+  char *n=token;
+  for(; *n!='\0';n++){
     if(*n==' '||*n=='\t'||*n=='\0')
       return n;
   }
@@ -42,9 +43,9 @@ char *copy_str(char *inStr, short len){
   for(i=0;i<len;i++)
     copy[i]=inStr[i];
   copy[i]='\0';
-  return copy
+  return copy;
 }
-char **tokenize(char **tokens){
+char **tokenize(char *str){
   int n = count_tokens(str);
   char **tokens = malloc((n+1) * sizeof(char *));
   char *p =str;
@@ -60,7 +61,7 @@ char **tokenize(char **tokens){
 }
 void print_tokens(char **tokens){
   for(int i = 0;tokens[i]!=0;i++)
-    printf("%s\n, tokens[i]);
+    printf("%s\n", tokens[i]);
 }
 void free_tokens(char **tokens){
   for(int i = 0; tokens[i]!=0;i++)
